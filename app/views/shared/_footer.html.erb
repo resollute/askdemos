@@ -1,3 +1,6 @@
-<%= link_to 'Pricing', pricing_path %>
-<%= link_to 'Privacy', privacy_path %>
-<%= link_to 'Terms', terms_path %>
+<hr>
+<center>
+  <%= link_to_unless_current 'Pricing', pricing_path %>
+  <%= link_to_unless_current 'Privacy', privacy_path %>
+  <%= link_to_unless_current 'Terms', terms_path %>
+</center>

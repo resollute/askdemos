@@ -2,5 +2,8 @@
   <h2>
     <%= link_to_unless_current Rails.application.class.module_parent.name, root_path %>
   </h2>
+  <%= link_to_unless_current 'Inboxes', inboxes_path %>
+  <%= link_to_unless_current 'New Inbox', new_inbox_path %>
+
 </center>
 <hr>

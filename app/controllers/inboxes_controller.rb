@@ -1,4 +1,5 @@
 class InboxesController < ApplicationController
+  # rails g scaffold inbox name
   before_action :set_inbox, only: %i[show edit update destroy]
 
   # GET /inboxes or /inboxes.json

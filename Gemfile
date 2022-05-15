@@ -77,3 +77,4 @@ gem "faker", "~> 2.20"
 gem "devise"
 gem 'acts_as_votable'
 
+gem "pundit", "~> 2.2"

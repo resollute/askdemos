@@ -16,7 +16,7 @@ user2 = User.create(email: "user2@gmail.com",
     message_body1 = Faker::Games::Witcher.character + '!!!'
     Message.create!(body: message_body1,
                   inbox: inbox1,
-                  user: [user1, user2].sample)
+                  user: User.all.sample)
   end 
   faker_name2 = Faker::Movies::HarryPotter.quote[0..Inbox::MAX_NAME]
   inbox2 = Inbox.create!(name: faker_name2,
@@ -25,6 +25,6 @@ user2 = User.create(email: "user2@gmail.com",
     message_body2 = Faker::Movies::HarryPotter.character + '!!!'
     Message.create!(body: message_body2,
                   inbox: inbox2,
-                  user: [user1, user2].sample)
+                  user: User.all.sample)
   end
 end

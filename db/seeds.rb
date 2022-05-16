@@ -9,20 +9,20 @@ user2 = User.create(email: "user2@gmail.com",
 
 
 4.times do
-  faker_name1 = Faker::Games::Witcher.quote[0..Inbox::MAX_NAME]
+  faker_name1 = Faker::Movies::HarryPotter.unique.quote[0..Inbox::MAX_NAME-1]
   inbox1 = Inbox.create!(name: faker_name1,
                         user: user1)
   rand(1..5).times do
-    message_body1 = Faker::Games::Witcher.character + '!!!'
+    message_body1 = Faker::Movies::HarryPotter.unique.character + '!!!'
     Message.create!(body: message_body1,
                   inbox: inbox1,
                   user: User.all.sample)
   end 
-  faker_name2 = Faker::Movies::HarryPotter.quote[0..Inbox::MAX_NAME]
+  faker_name2 = Faker::Movies::HarryPotter.unique.quote[0..Inbox::MAX_NAME-1]
   inbox2 = Inbox.create!(name: faker_name2,
                         user: user2)
   rand(1..5).times do
-    message_body2 = Faker::Movies::HarryPotter.character + '!!!'
+    message_body2 = Faker::Movies::HarryPotter.unique.character + '!!!'
     Message.create!(body: message_body2,
                   inbox: inbox2,
                   user: User.all.sample)

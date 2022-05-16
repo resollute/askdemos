@@ -1,8 +1,11 @@
+# prevent run seeds in production
+return unless Rails.env.development?
+
 User.all.destroy_all
 # Inbox.destroy_all
 # Message.destroy_all
 
-user1 = User.create(email: "user1@gmail.com", 
+user1 = User.create(email: "user1@gmail.com",
                     password: "111111")
 user2 = User.create(email: "user2@gmail.com",
                     password: "111111")

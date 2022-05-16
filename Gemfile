@@ -80,3 +80,5 @@ gem 'acts_as_votable'
 gem "pundit", "~> 2.2"
 
 gem "friendly_id", "~> 5.4"
+
+gem "meta-tags", "~> 2.16"

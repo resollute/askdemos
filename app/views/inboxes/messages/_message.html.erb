@@ -1,8 +1,6 @@
 <div id="<%= dom_id message %>" class="scaffold_record">
-  <%= message.created_at %>
-
   <%= simple_format(message.body) %>
-
+  
   <%= button_to 'Upvote',
                 [:upvote, @inbox, message],
                 method: :patch %>

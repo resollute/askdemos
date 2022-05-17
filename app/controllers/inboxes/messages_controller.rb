@@ -7,7 +7,15 @@ module Inboxes
       @message = @inbox.messages.find(params[:id])
       flash[:notice] = 'voted!'
       @message.upvote! current_user
-      redirect_to @inbox
+      respond_to do |format|
+        format.turbo_stream do
+          render turbo_stream: [
+            turbo_stream.replace(@message,
+                                partial: 'inboxes/messages/message',
+                                locals: { message: @message })
+          ]
+        end
+      end
     end
 
     def edit; end

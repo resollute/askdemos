@@ -23,10 +23,12 @@ module Inboxes
       respond_to do |format|
         if @message.save
           format.turbo_stream do
-            render turbo_stream: 
-             turbo_stream.update('new_message',
-                                 partial: 'inboxes/messages/form',
-                                 locals: { message: Message.new })
+            render turbo_stream: [
+              turbo_stream.update('new_message',
+                                  partial: 'inboxes/messages/form',
+                                  locals: { message: Message.new }),
+              turbo_stream.update('message_counter', @inbox.messages_count)
+            ]
           end
           format.html { redirect_to @inbox, notice: 'Message was successfully created.' }
 
@@ -36,7 +38,7 @@ module Inboxes
               turbo_stream.update('new_message',
                                   partial: 'inboxes/messages/form',
                                   locals: { message: @message })
-          format.html { render :new, status: :unprocessable_entity }
+            format.html { render :new, status: :unprocessable_entity }
           end
         end
       end

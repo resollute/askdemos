@@ -16,10 +16,6 @@ module Inboxes
       redirect_to @inbox
     end
 
-    def new
-      @message = @inbox.messages.new
-    end
-
     def edit; end
 
     def create

@@ -276,7 +276,8 @@ Devise.setup do |config|
     Rails.application.credentials.dig(:omniauth, :github, :id),
     Rails.application.credentials.dig(:omniauth, :github, :secret),
     scope: 'repo,user'
-
+  config.omniauth :google_oauth2, '1054152674303-nslamrd107dsoc4o92msoh4e7svdf36m.apps.googleusercontent.com',
+                                  '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'
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

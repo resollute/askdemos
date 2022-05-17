@@ -24,12 +24,24 @@ module Inboxes
 
     def create
       @message = @inbox.messages.new(message_params)
-
       respond_to do |format|
         if @message.save
+          format.turbo_stream do
+            render turbo_stream: 
+             turbo_stream.update('new_message',
+                                 partial: 'inboxes/messages/form',
+                                 locals: { message: Message.new })
+          end
           format.html { redirect_to @inbox, notice: 'Message was successfully created.' }
+
         else
+          format.turbo_stream do
+            render turbo_stream:
+              turbo_stream.update('new_message',
+                                  partial: 'inboxes/messages/form',
+                                  locals: { message: @message })
           format.html { render :new, status: :unprocessable_entity }
+          end
         end
       end
     end

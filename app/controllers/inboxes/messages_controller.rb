@@ -10,7 +10,7 @@ module Inboxes
       respond_to do |format|
         format.turbo_stream do
           render turbo_stream: [
-            turbo_stream.update('flash', partial: 'shared/flash'),
+            render_turbo_flash,
             turbo_stream.replace(@message,
                                 partial: 'inboxes/messages/message',
                                 locals: { message: @message })
@@ -29,7 +29,7 @@ module Inboxes
           format.turbo_stream do
             flash.now[:notice] = "Message #{@message.id} created"
             render turbo_stream: [
-              turbo_stream.update('flash', partial: 'shared/flash'),
+              render_turbo_flash,
               turbo_stream.update('new_message',
                                   partial: 'inboxes/messages/form',
                                   locals: { message: Message.new }),
@@ -45,7 +45,7 @@ module Inboxes
           format.turbo_stream do
             flash.now[:alert] = "Something went wrong..."
             render turbo_stream: [
-              turbo_stream.update('flash', partial: 'shared/flash'),
+              render_turbo_flash,
               turbo_stream.update('new_message',
                                   partial: 'inboxes/messages/form',
                                   locals: { message: @message })

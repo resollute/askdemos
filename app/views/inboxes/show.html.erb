@@ -13,6 +13,6 @@
 
 <%= Time.zone.now %>
 <div id="message_list">
-  <%= render partial: 'inboxes/messages/message', collection: @inbox.messages.order("created_at DESC") %>
+  <%= render partial: 'inboxes/messages/message', collection: @inbox.messages %>
 </div>
 

@@ -3,8 +3,15 @@ module Inboxes
     # rails g scaffold message body:text inbox:references user:references
     before_action :set_inbox
 
-    def upvote
+    def change_status
       @message = @inbox.messages.find(params[:id])
+      @message.update(status: params[:status])
+      flash[:notice] = "Status for message #{@message.id}: #{@message.status}"
+      redirect_to @inbox
+    end
+
+    def upvote
+      @message = inbox.messages.find(params[:id])
       flash.now[:notice] = 'voted!'
       @message.upvote! current_user
       respond_to do |format|

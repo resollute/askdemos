@@ -20,7 +20,7 @@ module Inboxes
     end
 
     def upvote
-      @message = inbox.messages.find(params[:id])
+      @message = @inbox.messages.find(params[:id])
       flash.now[:notice] = 'voted!'
       @message.upvote! current_user
       respond_to do |format|

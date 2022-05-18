@@ -1,13 +1,13 @@
 module MessagesHelper  
   def status_color(status)
     case status
-    when :incoming
-      "blue"
-    when :todo
+    when "incoming"
+      "grey"
+    when "todo"
       "orange"
-    when :done
+    when "done"
       "green"
-    when :spam
+    when "spam"
       "red"
     end
   end

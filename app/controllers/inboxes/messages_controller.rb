@@ -2,6 +2,7 @@ module Inboxes
   class MessagesController < ApplicationController
     # rails g scaffold message body:text inbox:references user:references
     before_action :set_inbox
+    before_action :set_message, only: %i[change_status upvote destroy]
 
     def change_status
       @message = @inbox.messages.find(params[:id])
@@ -87,6 +88,10 @@ module Inboxes
 
     def set_inbox
       @inbox = Inbox.find(params[:inbox_id])
+    end
+
+    def set_message
+      @message = @inbox.messages.find(params[:id])
     end
 
     def message_params

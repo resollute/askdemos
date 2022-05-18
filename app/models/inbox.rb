@@ -1,6 +1,7 @@
 class Inbox < ApplicationRecord
   belongs_to :user
-  has_many :messages, -> { order(created_at: :desc) }, dependent: :destroy, inverse_of: :inbox
+  has_many :messages, dependent: :destroy
+  default_scope -> { order(created_at: :desc) }
 
   MIN_NAME = 6
   MAX_NAME = 100

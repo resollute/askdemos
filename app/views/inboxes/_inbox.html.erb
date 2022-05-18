@@ -2,7 +2,7 @@
   <h3>
     <%= link_to inbox.name, inbox %>
   </h3>
-
+  <%# User can edit only own inboxes, messages %>
   <%# shows if the user can edit  %>
   <%= policy(inbox).edit? %>
   <%= link_to "Edit", edit_inbox_path(inbox) if policy(inbox).edit? %>
@@ -16,6 +16,6 @@
     by
     <%= inbox.user.email %>
     on
-    <%= inbox.created_at.strftime('%d/%b/%Y') %>
+    <%= inbox.created_at.strftime('%d/%b/%Y, %H:%M') %>
   </i>
 </div>

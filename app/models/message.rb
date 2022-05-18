@@ -1,6 +1,7 @@
 class Message < ApplicationRecord
   belongs_to :inbox, counter_cache: true
   belongs_to :user
+  default_scope -> { order(created_at: :desc) }
 
   MIN_BODY = 6
   MAX_BODY = 2000

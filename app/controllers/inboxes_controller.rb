@@ -28,7 +28,7 @@ class InboxesController < ApplicationController
 
     respond_to do |format|
       if @inbox.save
-        format.html { redirect_to inbox_url(@inbox), notice: 'Inbox was successfully created.' }
+        format.html { redirect_to inboxes_url, notice: 'Inbox was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end

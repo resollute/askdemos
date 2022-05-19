@@ -87,3 +87,5 @@ gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem "omniauth-rails_csrf_protection" # for omniauth 2.0
 # Omniauth Google
 gem 'omniauth-google-oauth2'
+
+gem 'ransack', :github => 'activerecord-hackery/ransack', :branch => 'main'

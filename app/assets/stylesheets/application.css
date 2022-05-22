@@ -21,7 +21,7 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 20px;
   color: #131313;
@@ -109,8 +109,43 @@ li {
   transition: all 0.3s;
 }
 
+.nav__link:active,
+.logo:active {
+  text-transform: uppercase;
+  padding: 20px 20px;
+  transition: all 0.3s;
+}
+
 .nav__link:hover,
 .logo:hover {
   background-color: #a8b318;
   color: #fff;
+}
+
+.profile {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 28px;
+  color: #131313;
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  height: 90px;
+}
+
+.profile__item {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.profile__item + .profile__item {
+  padding-left: 20px;
+}
+
+.profile__image img {
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  padding: 0.12em;
+  /* margin-bottom: 1em; */
 }

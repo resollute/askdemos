@@ -2,46 +2,36 @@
   <div class="container">
     <div class="header__inner">
       <div class="logo">
-        <%= link_to Askdemos %>
+        <%= link_to_unless_current Rails.application.class.module_parent.name, root_path %>
       </div>
       <nav class="navbar">
         <ul class="nav__links">
           <li class="nav__item">
-            <a class="nav__link" href="#">Home</a>
+            <%= link_to_unless_current 'Inboxes', inboxes_path, class: "nav__link" %>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">About</a>
+            <%= link_to_unless_current 'New Inbox', new_inbox_path, class: "nav__link" %>
           </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#">Log out</a>
-          </li>
+          <% if user_signed_in? %>
+            <li class="nav__item">
+              <%= link_to "Log out",
+                    destroy_user_session_path,
+                    method: :delete,
+                    data: { turbo: "false" }, class: "nav__link" %>
+            </li>
+          <% else %>
+            <li class="nav__item">
+              <%= link_to "Log in", new_user_session_path, class: "nav__link" %>
+            </li>
+            <li class="nav__item">
+              <%= link_to "Register", new_user_registration_path, class: "nav__link" %>
+            </li>
+          <% end %>
         </ul>
       </nav>
     </div>
+    <%= render 'shared/profile'%>
   </div>
 </header>
 
 
-<center>
-  <h2>
-    <%= link_to_unless_current Rails.application.class.module_parent.name, root_path %>
-  </h2>
-  <%= link_to_unless_current 'Inboxes', inboxes_path %>
-  <%= link_to_unless_current 'New Inbox', new_inbox_path %>
-  <% if user_signed_in? %>
-    <%= image_tag current_user.image, size: '30x30', alt: "#{current_user.email}" if current_user.image? %>
-    <%= current_user.name %>
-    <%= current_user.uid %>
-    <%= current_user.provider %>
-
-    <%= link_to current_user.email, edit_user_registration_path %>
-    <%= button_to "Log out",
-                  destroy_user_session_path,
-                  method: :delete,
-                  data: { turbo: "false" } %>
-  <% else %>
-    <%= link_to "Log in", new_user_session_path %>
-    <%= link_to "Register", new_user_registration_path %>
-  <% end %>
-</center>
-<hr>

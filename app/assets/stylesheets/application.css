@@ -14,10 +14,32 @@
  *= require_self
  */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0 auto;
-  max-width: 500px;
-  display: block;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #131313;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  padding-left: 0;
 }
 
 #notice {
@@ -34,22 +56,6 @@ body {
   padding: 6px;
 }
 
-a:link {
-  text-decoration: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-.scaffold_record {
-  border: 2px solid #bfbfbf;
-  border-radius: 6px;
-  padding: 6px;
-  margin-bottom: 6px;
-  word-break: break-word;
-}
-
 #error_explanation {
   color: red;
   border: 2px solid red;
@@ -57,4 +63,54 @@ a {
   padding: 6px;
   margin-bottom: 6px;
   word-break: break-word;
+}
+
+.scaffold_record {
+  border: 2px solid #bfbfbf;
+  border-radius: 6px;
+  /* padding: 10px; */
+  min-height: 150px;
+  align-items: center;
+  margin-bottom: 6px;
+  word-break: break-word;
+}
+
+.container {
+  max-width: 800px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: teal;
+  color: #fff;
+  /* padding-left: 20px; */
+}
+
+.navbar {
+  padding: 20px 0px;
+}
+
+.nav__links {
+  display: flex;
+}
+
+.nav__item + .nav__item {
+  /* padding-left: 10px; */
+}
+
+.nav__link,
+.logo {
+  text-transform: uppercase;
+  padding: 20px 20px;
+  transition: all 0.3s;
+}
+
+.nav__link:hover,
+.logo:hover {
+  background-color: #a8b318;
+  color: #fff;
 }

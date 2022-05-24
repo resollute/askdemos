@@ -5,10 +5,11 @@
   <%# User can edit only own inboxes, messages %>
   <%# shows if the user can edit  %>
   <%= policy(inbox).edit? %>
-  <%= link_to "Edit", edit_inbox_path(inbox) if policy(inbox).edit? %>
-  <%= button_to "Destroy", inbox, method: :delete if policy(inbox).destroy?  %>
+  <%= button_to "Edit", edit_inbox_path(inbox) if policy(inbox).edit? %>
+  <%= link_to "Destroy", inbox, method: :delete if policy(inbox).destroy?  %>
 
   Messages:
+  <br>
   <%= inbox.messages_count %>
   <br>
 

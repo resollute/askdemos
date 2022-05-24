@@ -51,7 +51,9 @@ class InboxesController < ApplicationController
     @inbox.destroy
 
     respond_to do |format|
-      format.html { redirect_to inboxes_url, notice: 'Inbox was successfully destroyed.' }
+      flash.now[:notice] = "Inbox #{@inbox.id} destroyed!"
+      format.turbo_stream
+      format.html { redirect_to @inboxes, notice: 'Inbox was successfully destroyed.' }
     end
   end
 

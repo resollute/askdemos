@@ -223,7 +223,6 @@ li {
 }
 
 .inbox__sort {
-  display: flex;
   padding-bottom: 10px;
 }
 .inbox__sort-items {

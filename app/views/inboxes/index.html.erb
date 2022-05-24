@@ -30,22 +30,21 @@
   </div>
 
   <div class="inbox__sort">
-    
-      <%= turbo_frame_tag 'search' do %>
-        <div class="inbox__sort-items">
-          <%= sort_link(@q, :name, default_order: :desc, data: { turbo_frame: 'search' }) %>
-          <%= sort_link(@q, :created_at, default_order: :desc, data: { turbo_frame: 'search' }) %>
-          <%= sort_link(@q, :messages_count, default_order: :desc, data: { turbo_frame: 'search' }) %>
+    <%= turbo_frame_tag 'search' do %>
+      <div class="inbox__sort-items">
+        <%= sort_link(@q, :name, default_order: :desc, data: { turbo_frame: 'search' }) %>
+        <%= sort_link(@q, :created_at, default_order: :desc, data: { turbo_frame: 'search' }) %>
+        <%= sort_link(@q, :messages_count, default_order: :desc, data: { turbo_frame: 'search' }) %>
 
-          <%= link_to 'Refresh search', request.path, 
-                data: { turbo_frame: 'search'},
-                class: "inbox__refresh-link" if request.query_parameters.any? %>
-    
-        </div>
-        <div id="inboxes">
-          <%= render @inboxes %>
-        </div>
-      <% end %>
+        <%= link_to 'Refresh search', request.path, 
+              data: { turbo_frame: 'search'},
+              class: "inbox__refresh-link" if request.query_parameters.any? %>
+  
+      </div>
+    <% end %>
+    <div id="inboxes">
+      <%= render @inboxes %>
+    </div>
     
   </div>
 </div>

@@ -2,11 +2,11 @@
   <div class="inbox__count">
     <h1>
       Inboxes:
-      <turbo-stream action="replace" target="inbox_counter">
-        <span>
-          <%= @inboxes.count %>
-        </span>
-      </turbo-stream>
+        <turbo-frame>
+          <span id="inbox_counter">
+            <%= @inboxes.count %>
+          </span>
+        </turbo-frame>
     </h1>
   </div>
   <div class="inbox__search-form">

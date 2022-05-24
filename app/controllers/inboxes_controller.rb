@@ -49,7 +49,8 @@ class InboxesController < ApplicationController
 
   def destroy
     @inbox.destroy
-
+    @inboxes = Inbox.all
+    @inboxes_count = @inboxes.count
     respond_to do |format|
       flash.now[:notice] = "Inbox #{@inbox.id} destroyed!"
       format.turbo_stream

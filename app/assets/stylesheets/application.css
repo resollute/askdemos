@@ -119,6 +119,7 @@ li {
 .nav__link:hover,
 .logo:hover {
   background-color: #a8b318;
+  /* background-color: #00d1b2; */
   color: #fff;
 }
 
@@ -148,4 +149,116 @@ li {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   padding: 0.12em;
   /* margin-bottom: 1em; */
+}
+
+.inbox__count h1 {
+  font-weight: 400;
+  font-style: italic;
+  margin: 0.1em 0;
+}
+
+.inbox__search-form {
+  font-size: 22px;
+  /* line-height: 2; */
+  padding: 2`0px 0;
+}
+
+.inbox__search-form p {
+  margin: 0.5em 0;
+}
+
+.inbox__search-items {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.inbox__search-item + .inbox__search-item {
+  padding-left: 15px;
+  align-items: center;
+}
+
+.inbox__search-field input {
+  border: 2px solid teal;
+  border-radius: 0.375em;
+  height: 35px;
+  font-size: 20px;
+
+  /* width: 100px; */
+}
+
+.inbox__search-field input[type="search"]:focus {
+  /* box-shadow: 0 0 0 0.125em rgb(0 209 178 / 25%); */
+  box-shadow: 0 0 10px 3px rgb(0 128 128 / 60%);
+  /* box-shadow: 0 0 10px 3px teal; */
+  /* border-color: teal; */
+}
+
+.inbox__search-submit input[type="submit"] {
+  background-color: teal;
+  color: #fff;
+  border-color: transparent;
+  cursor: pointer;
+  justify-content: center;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: calc(0.5em - 1px);
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 0.375em;
+  font-size: 17px;
+}
+
+.inbox__search-submit input[type="submit"]:hover {
+  box-shadow: 0 0 10px 3px rgb(0 128 128 / 60%);
+}
+
+.inbox__sort {
+  display: flex;
+  padding-bottom: 10px;
+}
+.inbox__sort-items {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.sort_link + .sort_link {
+  padding-left: 36px;
+}
+
+/* Hover Refresh link */
+
+.inbox__refresh-link {
+  background-image: linear-gradient(to right, #54b3d6, #54b3d6 50%, #000 50%);
+  background-size: 200% 100%;
+  background-position: 100%;
+  display: inline-block;
+  margin-left: 30px;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.inbox__refresh-link:before {
+  content: "";
+  background: #54b3d6;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0px;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.inbox__refresh-link:hover {
+  background-position: 0;
+}
+
+.inbox__refresh-link:hover::before {
+  padding-left: 30px;
+  width: 100%;
 }

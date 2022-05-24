@@ -1,29 +1,50 @@
 <div class="container">
-  <h1>
-    Inboxes:
-    <%= @inboxes.count %>
-  </h1>
-
-  <%= search_form_for @q, html: { autocomplete: "off" }, data: { turbo_frame: "search" } do |f| %>
-
-    # Search if the name field contains...
-    <%= f.label :name_cont %>
-    <%= f.search_field :name_cont %>
-
-    <%= f.submit %>
-  <% end %>
-
-
-  <%= turbo_frame_tag 'search' do %>
-    <%= sort_link(@q, :name, default_order: :desc) %> 
-    <%= sort_link(@q, :created_at, default_order: :desc) %>
-    <%= sort_link(@q, :message_count, default_order: :desc) %>
-
-    <%= request.path %>
-    <%= link_to 'Refresh search', request.path if request.query_parameters.any? %>
-
-    <div id="inboxes">
-      <%= render @inboxes %>
+  <div class="inbox">
+    <div class="inbox__count">
+      <h1>
+        Inboxes:
+        <%= @inboxes.count %>
+      </h1>
     </div>
-  <% end %>
+    <div class="inbox__search-form">
+      <%= search_form_for @q, html: { autocomplete: "off" }, data: { turbo_frame: "search" } do |f| %>
+
+        <p># Search if the name field contains ...</p>
+        <div class="inbox__search-items">
+          <div class="inbox__search-item">
+            <div class="inbox__search-label">
+              <%= f.label :name_cont %>
+            </div>
+          </div>
+          <div class="inbox__search-item">
+            <div class="inbox__search-field">
+              <%= f.search_field :name_cont %>
+            </div>
+          </div>
+          <div class="inbox__search-item">
+            <div class="inbox__search-submit">
+              <%= f.submit %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="inbox__sort">
+      <%= turbo_frame_tag 'search' do %>
+        <div class="inbox__sort-items">
+          <%= sort_link(@q, :name, default_order: :desc) %>
+          <%= sort_link(@q, :created_at, default_order: :desc) %>
+          <%= sort_link(@q, :messages_count, default_order: :desc) %>
+
+          <%= link_to 'Refresh search', request.path,
+                class: "inbox__refresh-link" if request.query_parameters.any? %>
+        </div>
+    
+        <div id="inboxes">
+          <%= render @inboxes %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

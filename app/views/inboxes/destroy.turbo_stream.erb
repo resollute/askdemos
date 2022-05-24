@@ -1,5 +1,5 @@
 <%= turbo_stream.remove(@inbox) %>
 
-<%# <%= turbo_stream.update('message_counter', @inbox.messages_count) %> %>
+<%= turbo_stream.replace('inbox_counter') %>
 
 <%= turbo_stream.update('flash', partial: 'shared/flash')%>

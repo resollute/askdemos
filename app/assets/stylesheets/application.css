@@ -231,6 +231,10 @@ li {
   margin-bottom: 15px;
 }
 
+.inboxes {
+  display: block;
+}
+
 .sort_link + .sort_link {
   padding-left: 35px;
 }

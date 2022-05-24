@@ -1,37 +1,35 @@
 <header class="header">
-  <div class="container">
-    <div class="header__inner">
-      <div class="logo">
-        <%= link_to_unless_current Rails.application.class.module_parent.name, root_path %>
-      </div>
-      <nav class="navbar">
-        <ul class="nav__links">
-          <li class="nav__item">
-            <%= link_to_unless_current 'Inboxes', inboxes_path, class: "nav__link" %>
-          </li>
-          <li class="nav__item">
-            <%= link_to_unless_current 'New Inbox', new_inbox_path, class: "nav__link" %>
-          </li>
-          <% if user_signed_in? %>
-            <li class="nav__item">
-              <%= link_to "Log out",
-                    destroy_user_session_path,
-                    method: :delete,
-                    data: { turbo: "false" }, class: "nav__link" %>
-            </li>
-          <% else %>
-            <li class="nav__item">
-              <%= link_to "Log in", new_user_session_path, class: "nav__link" %>
-            </li>
-            <li class="nav__item">
-              <%= link_to "Register", new_user_registration_path, class: "nav__link" %>
-            </li>
-          <% end %>
-        </ul>
-      </nav>
+  <div class="header__inner">
+    <div class="logo">
+      <%= link_to_unless_current Rails.application.class.module_parent.name, root_path %>
     </div>
-    <%= render 'shared/profile'%>
+    <nav class="navbar">
+      <ul class="nav__links">
+        <li class="nav__item">
+          <%= link_to_unless_current 'Inboxes', inboxes_path, class: "nav__link" %>
+        </li>
+        <li class="nav__item">
+          <%= link_to_unless_current 'New Inbox', new_inbox_path, class: "nav__link" %>
+        </li>
+        <% if user_signed_in? %>
+          <li class="nav__item">
+            <%= link_to "Log out",
+                  destroy_user_session_path,
+                  method: :delete,
+                  data: { turbo: "false" }, class: "nav__link" %>
+          </li>
+        <% else %>
+          <li class="nav__item">
+            <%= link_to "Log in", new_user_session_path, class: "nav__link" %>
+          </li>
+          <li class="nav__item">
+            <%= link_to "Register", new_user_registration_path, class: "nav__link" %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
   </div>
+  <%= render 'shared/profile'%>
 </header>
 
 

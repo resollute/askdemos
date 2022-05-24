@@ -51,7 +51,8 @@ li {
 }
 
 #alert {
-  background-color: red;
+  /* background-color: red; */
+  background-color: #f14668;
   color: white;
   border-radius: 6px;
   padding: 6px;

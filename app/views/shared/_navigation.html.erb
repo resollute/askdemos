@@ -15,8 +15,8 @@
           <li class="nav__item">
             <%= link_to "Log out",
                   destroy_user_session_path,
-                  method: :delete,
-                  data: { turbo: "false" }, class: "nav__link" %>
+                  
+                  data: { turbo_method: :delete }, class: "nav__link" %>
           </li>
         <% else %>
           <li class="nav__item">

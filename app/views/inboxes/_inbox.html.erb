@@ -1,6 +1,6 @@
 <div id="<%= dom_id inbox %>" class="scaffold_record">
   <h3>
-    <%= link_to inbox.name, inbox %>
+    <%= link_to inbox.name, inbox, data: {turbo: false} %>
   </h3>
   <%# User can edit only own inboxes, messages %>
   <%# shows if the user can edit  %>

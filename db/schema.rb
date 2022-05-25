@@ -39,7 +39,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_19_074804) do
     t.integer "cached_weighted_score", default: 0
     t.integer "cached_weighted_total", default: 0
     t.float "cached_weighted_average", default: 0.0
-    t.string "status", default: "incoming", null: false
     t.index ["inbox_id"], name: "index_messages_on_inbox_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end

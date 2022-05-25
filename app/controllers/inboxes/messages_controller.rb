@@ -2,23 +2,7 @@ module Inboxes
   class MessagesController < ApplicationController
     # rails g scaffold message body:text inbox:references user:references
     before_action :set_inbox
-    before_action :set_message, only: %i[change_status upvote destroy]
-
-    def change_status
-      @message = @inbox.messages.find(params[:id])
-      @message.update(status: params[:status])
-      flash.now[:notice] = "Status for message #{@message.id}: #{@message.status}"
-      respond_to do |format|
-        format.turbo_stream do
-          render turbo_stream: [
-            render_turbo_flash,
-            turbo_stream.replace(@message,
-                                 partial: 'inboxes/messages/message',
-                                 locals: { message: @message })
-          ]
-        end
-      end
-    end
+    before_action :set_message, only: %i[upvote destroy]
 
     def upvote
       @message = @inbox.messages.find(params[:id])

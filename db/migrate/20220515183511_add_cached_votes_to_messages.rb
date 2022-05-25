@@ -1,4 +1,4 @@
-class AddCachedVotesToPosts < ActiveRecord::Migration[7.0]
+class AddCachedVotesToMessages < ActiveRecord::Migration[7.0]
   def change
     change_table :messages do |t|
       t.integer :cached_votes_total, default: 0

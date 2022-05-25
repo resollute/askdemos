@@ -44,18 +44,19 @@ li {
 
 #notice {
   /* background-color: green; */
-  background-color: #00c4a7;
-  color: white;
+  /* background-color: #00c4a7; */
+  background-color: rgb(73 208 115);
+  color: #fff;
   border-radius: 6px;
-  padding: 6px;
+  padding: 10px;
 }
 
 #alert {
   /* background-color: red; */
   background-color: #f14668;
-  color: white;
+  color: #fff;
   border-radius: 6px;
-  padding: 6px;
+  padding: 10px;
 }
 
 #error_explanation {
@@ -64,18 +65,6 @@ li {
   border-radius: 6px;
   padding: 6px;
   margin-bottom: 6px;
-  word-break: break-word;
-}
-
-.scaffold_record {
-  /* border: 2px solid #bfbfbf; */
-  border-radius: 6px;
-  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%),
-    0 0 0 1px rgb(10 10 10 / 2%);
-  padding: 1.25rem;
-  min-height: 200px;
-  align-items: center;
-  margin-bottom: 20px;
   word-break: break-word;
 }
 
@@ -100,10 +89,6 @@ li {
 
 .nav__links {
   display: flex;
-}
-
-.nav__item + .nav__item {
-  /* padding-left: 10px; */
 }
 
 .nav__link,
@@ -246,7 +231,7 @@ li {
 /* Hover Refresh link */
 
 .inbox__refresh-link {
-  background-image: linear-gradient(to right, #54b3d6, #54b3d6 50%, #000 50%);
+  background-image: linear-gradient(to right, teal, teal 50%, #000 50%);
   background-size: 200% 100%;
   background-position: 100%;
   display: inline-block;
@@ -276,4 +261,84 @@ li {
 .inbox__refresh-link:hover::before {
   padding-left: 30px;
   width: 100%;
+}
+
+.inbox__buttons {
+  padding: 1px 0;
+}
+
+.scaffold_record {
+  /* border: 2px solid #bfbfbf; */
+  border-radius: 6px;
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%),
+    0 0 0 1px rgb(10 10 10 / 2%);
+  padding: 1.25rem;
+  min-height: 100px;
+  align-items: center;
+  margin-bottom: 20px;
+  word-break: break-word;
+}
+
+.scaffold_record h3 {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.inbox__buttons {
+  display: flex;
+  height: 50px;
+  width: 100px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.inbox__button-edit a {
+  background-color: #ffe08a;
+  color: #000;
+  margin-right: 10px;
+  cursor: pointer;
+  justify-content: center;
+  padding-bottom: calc(0.7em - 1px);
+  padding-left: 1.6em;
+  padding-right: 1.6em;
+  padding-top: calc(0.7em - 1px);
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 0.375em;
+  font-size: 17px;
+  font-weight: 500;
+  font-style: oblique;
+}
+
+.inbox__button-destroy a {
+  font-weight: 500;
+  font-style: oblique;
+  background-color: #df284d;
+  color: #fff;
+  margin-right: 20px;
+  cursor: pointer;
+  justify-content: center;
+  padding-bottom: calc(0.7em - 1px);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: calc(0.7em - 1px);
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 0.375em;
+  font-size: 17px;
+}
+
+.inbox__messages span {
+  font-weight: 500;
+  font-style: italic;
+}
+
+p.inbox__creator-text {
+  margin: 5px 0;
+}
+
+p.inbox__creator-text span {
+  font-size: 22px;
+  font-weight: 300;
+  font-style: italic;
 }

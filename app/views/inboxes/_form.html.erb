@@ -1,15 +1,17 @@
 <%= form_with(model: inbox) do |form| %>
   <%= render 'shared/errors', form: form %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name, 
+  <div class="inbox__form">
+    <%= form.label :name, style: "display: block", class: "inbox__label" %>
+    <%= form.text_area :name, 
                         autocomplete: 'off', 
                         style: 'width:100%; padding: 5px 0;',
-                        maxlength: Inbox::MAX_NAME %>
+                        maxlength: Inbox::MAX_NAME,
+                        placeholder: "Compose a new inbox",
+                        class: "inbox__text-area" %>
   </div>
 
-  <div>
+  <div class="inbox__submit">
     <%= form.submit %>
   </div>
 <% end %>

@@ -357,6 +357,10 @@ p.inbox__creator-text span {
   font-weight: 300;
   font-style: italic;
 }
+/* show page */
+.inbox__show {
+  margin-top: 10px;
+}
 
 /* Message _form styling */
 

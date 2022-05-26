@@ -53,6 +53,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'pry-rails', '~> 0.3.9'
   gem 'rubocop-rails', require: false
+  gem "letter_opener"
 end
 
 group :development do

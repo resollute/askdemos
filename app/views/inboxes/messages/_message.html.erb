@@ -6,22 +6,22 @@
 
   <hr>
   
-
-  <%= button_to [:upvote, @inbox, message], method: :patch do %>
-    <% if current_user.voted_up_on? message, vote_scope: 'like' %>
-      UN-vote
-    <% else %>
-      UP-vote
+  <div class="message__vote-button">
+    <%= button_to [:upvote, @inbox, message], method: :patch do %>
+      <% if current_user.voted_up_on? message, vote_scope: 'like' %>
+        UN-vote
+      <% else %>
+        UP-vote
+      <% end %>
     <% end %>
-  <% end %>
-
-  <%= message.cached_votes_total %>
+  </div>
+  <%#= message.cached_votes_total %>
   <%= message.cached_votes_score %>
-  <%= message.cached_votes_up %>
-  <%= message.cached_votes_down %>
-  <%= message.cached_weighted_score %>
-  <%= message.cached_weighted_total %>
-  <%= message.cached_weighted_average %>
+  <%#= message.cached_votes_up %>
+  <%#= message.cached_votes_down %>
+  <%#= message.cached_weighted_score %>
+  <%#= message.cached_weighted_total %>
+  <%#= message.cached_weighted_average %>
   <br>
 
   <i>

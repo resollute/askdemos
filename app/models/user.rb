@@ -6,9 +6,6 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[github google_oauth2]
 
 
-  
-         
-
   has_many :inboxes, dependent: :destroy
   # has_many :messages, through: :inboxes
   has_many :messages, dependent: :destroy

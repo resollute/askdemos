@@ -42,6 +42,37 @@ li {
   padding-left: 0;
 }
 
+input[type="submit"] {
+  background-color: teal;
+  color: #fff;
+  border-color: transparent;
+  cursor: pointer;
+  justify-content: center;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: calc(0.5em - 1px);
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 0.375em;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  opacity: 0.8;
+  box-shadow: 0 0 10px 3px rgb(0 128 128 / 60%);
+  transition: 0.1s ease;
+}
+
+input[type="submit"]:active {
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
 #notice {
   /* background-color: green; */
   /* background-color: #00c4a7; */
@@ -192,26 +223,6 @@ li {
 /* Clear palceholder on focus */
 .inbox__search-field input[type="search"]:focus::-webkit-input-placeholder {
   color: transparent;
-}
-
-input[type="submit"] {
-  background-color: teal;
-  color: #fff;
-  border-color: transparent;
-  cursor: pointer;
-  justify-content: center;
-  padding-bottom: calc(0.5em - 1px);
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-top: calc(0.5em - 1px);
-  text-align: center;
-  white-space: nowrap;
-  border-radius: 0.375em;
-  font-size: 17px;
-}
-
-input[type="submit"]:hover {
-  box-shadow: 0 0 10px 3px rgb(0 128 128 / 60%);
 }
 
 .inbox__sort {
@@ -466,3 +477,5 @@ p.message__creator-text span {
 }
 
 /* NEW INBOX */
+
+

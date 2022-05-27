@@ -20,7 +20,9 @@
     <div class="container">
       <%= render 'shared/navigation' %>
       <%= render 'shared/flash' %>
-      <%= render 'shared/profile'%>
+      <% if current_user %>
+        <%= render 'shared/profile'%>
+      <% end %>
       <%= yield %>
       <%= render 'shared/footer'%>
     </div>

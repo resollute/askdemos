@@ -1,33 +1,72 @@
-<h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: "false" }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  
+    
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: "false" }) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+      <div id="login-box">
+        <div class="left">
+          <h1>Sign up</h2>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+          <div class="field">
+            <%#= f.label :email %>
+            <%= f.email_field :email,
+                              autofocus: true,
+                              autocomplete: "email",
+                              placeholder: "E-mail" %>
+          </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+          <div class="field">
+            <%#= f.label :password %>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+            <%= f.password_field :password,
+                                  autocomplete: "new-password",
+                                  placeholder: "Password"%>
+          </div>
 
-<div id="login-box">
-  <div class="left">
+          <div class="field">
+            <%#= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation,
+                                  autocomplete: "new-password",
+                                  placeholder: "Retype password"%>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Sign up" %>
+          </div>
+        </div>
+        <div class="right">
+          <span class="loginwith">Sign in with<br />social network</span>
+
+          <button class="social-signin facebook">Log in with Facebook</button>
+          <%# <button class="social-signin twitter">Log in with Twitter</button>
+          <button class="social-signin google">Log in with Google+</button> %>
+          <%- if devise_mapping.omniauthable? %>
+            <%- resource_class.omniauth_providers.each do |provider| %>
+              <%= form_for "Login",
+                url: omniauth_authorize_path(resource_name, provider),
+                method: :post,
+                data: { turbo: "false" } do |form| %>
+                  <% if provider.name == "github" %>
+                    <%= button_to "Log in with #{OmniAuth::Utils.camelize(provider)}", 
+                                        omniauth_authorize_path(resource_name, provider),
+                                        method: :post,
+                                        class: "social-signin github"%>
+                  <% elsif provider.name == "google_oauth2"%>
+                    <%= button_to "Log in with #{OmniAuth::Utils.camelize(provider)[0,6]}+", 
+                                        omniauth_authorize_path(resource_name, provider),
+                                        method: :post,
+                                        class: "social-signin google"%>
+                  <% end %>
+              <% end %>
+          <% end %>
+        <% end %>
+        </div>
+      </div>   
+    <% end %>
+  
+
+  <%# <div class="left">
     <h1>Sign up</h1>
     
   
@@ -37,17 +76,16 @@
     
     <input type="submit" name="signup_submit" value="Sign me up" />
     <%= render "devise/shared/links" %>
-  </div>
-  
-  <div class="right">
+  <%# </div> %>
+  <%# <div class="right">
     <span class="loginwith">Sign in with<br />social network</span>
     
     <button class="social-signin facebook">Log in with facebook</button>
     <button class="social-signin twitter">Log in with Twitter</button>
     <button class="social-signin google">Log in with Google+</button>
   </div>
-  <div class="or">OR</div>
+  <div class="or">OR</div> %>
   
-</div>
+
 
 

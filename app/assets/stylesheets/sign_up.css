@@ -16,7 +16,6 @@
   position: relative;
   margin: 5% auto;
   font-size: 16px;
-  width: 800px;
   height: 400px;
   background: #FFF;
   border-radius: 2px;
@@ -40,7 +39,7 @@ h1 {
   font-size: 32px;
 }
 
-input[type="text"],
+input[type="email"],
 input[type="password"] {
   display: block;
   box-sizing: border-box;
@@ -56,24 +55,11 @@ input[type="password"] {
   transition: 0.2s ease;
 }
 
-input[type="text"]:focus,
+input[type="email"]:focus,
 input[type="password"]:focus {
   border-bottom: 2px solid #16a085;
   color: #16a085;
   transition: 0.2s ease;
-}
-
-.or {
-  position: absolute;
-  top: 180px;
-  left: 415px;
-  width: 40px;
-  height: 40px;
-  background: #DDD;
-  border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  line-height: 40px;
-  text-align: center;
 }
 
 .right {
@@ -128,8 +114,8 @@ button.social-signin.facebook {
   background: #32508E;
 }
 
-button.social-signin.twitter {
-  background: #55ACEE;
+button.social-signin.github {
+  background: #24292f;
 }
 
 button.social-signin.google {

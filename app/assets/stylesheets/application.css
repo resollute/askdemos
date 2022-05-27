@@ -91,12 +91,15 @@ input[type="submit"]:active {
 }
 
 #error_explanation {
-  color: red;
-  border: 2px solid red;
+  color: #DD4B39;
+  /* color: darkred; */
+  border: 2px solid #DD4B39;
   border-radius: 6px;
   padding: 6px;
   margin-bottom: 6px;
   word-break: break-word;
+  width: 100%;
+  text-align: center;
 }
 
 .container {

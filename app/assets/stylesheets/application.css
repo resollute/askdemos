@@ -102,6 +102,16 @@ input[type="submit"]:active {
   text-align: center;
 }
 
+.devise__links {
+  margin-top: 20px;
+  font-size: 20px;
+  width: 300px;
+}
+
+.devise__links-item {
+  margin-bottom: 5px;
+}
+
 .container {
   max-width: 800px;
   padding: 0 10px;

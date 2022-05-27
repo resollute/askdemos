@@ -17,13 +17,14 @@
     </div>
   <% end %>
   <div class="inbox__messages">
+    <hr>
     <span>Messages: <%= inbox.messages_count %> </span>
   </div>
 
   <div class="inbox__creator-data">
     <p class="inbox__creator-text">
-      created by: <span><%= inbox.user.email %></span>
-      on <span><%= inbox.created_at.strftime('%d/%b/%Y, %H:%M') %></span>
+      <span>created by: <%= inbox.user.email %></span>
+      <span>on <%= inbox.created_at.strftime('%d/%b/%Y, %H:%M') %></span>
     </p>
   </div>
 </div>

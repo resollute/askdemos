@@ -4,6 +4,22 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
+
+
+  config.action_mailer.default_url_options = {host: "askusers.herokuapp.com", protocol: "https"}
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    port: 587,
+    address: Rails.application.credentials.dig(:aws, :ses, :address),
+    user_name: Rails.application.credentials.dig(:aws, :ses, :id),
+    password: Rails.application.credentials.dig(:aws, :ses, :secret),
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
+
   config.cache_classes = true
 
   # Eager load code on boot. This eager loads most of Rails and

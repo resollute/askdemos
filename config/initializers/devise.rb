@@ -278,8 +278,8 @@ Devise.setup do |config|
       # Rails.application.credentials.dig(Rails.env.to_sym, :github, :secret),
       Rails.application.credentials.dig(:omniauth, :github, :client),
       Rails.application.credentials.dig(:omniauth, :github, :secret),
-      # scope: 'repo,user'
-      scope: 'user.public_repo'
+      scope: 'repo,user'
+      # scope: 'user.public_repo'
 
     config.omniauth :google_oauth2,
       # Rails.application.credentials.dig(Rails.env.to_sym, :google, :client_id),

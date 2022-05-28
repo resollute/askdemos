@@ -489,6 +489,12 @@ p.message__creator-text span {
   margin: 10px 0;
 }
 
-/* NEW INBOX */
-
+/* Footer css */
+div.footer__links {
+  display: flex;
+  justify-content: center;
+}
+.footer__link + .footer__link {
+  padding-left: 30px;
+}
 

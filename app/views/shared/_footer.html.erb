@@ -1,7 +1,13 @@
 
 <hr>
-<center>
-  <%= link_to_unless_current 'Pricing', pricing_path %>
-  <%= link_to_unless_current 'Privacy', privacy_path %>
-  <%= link_to_unless_current 'Terms', terms_path %>
-</center>
+<div class="footer__links">
+  <div class="footer__link">
+    <%= link_to_unless_current 'Pricing', pricing_path %>
+  </div>
+  <div class="footer__link">
+    <%= link_to_unless_current 'Privacy', privacy_path %>
+  </div>
+  <div class="footer__link">
+    <%= link_to_unless_current 'Terms', terms_path %>
+  </div>
+</div>

@@ -14,5 +14,4 @@ test:
 production:
   <<: *default
   database: askusers_production
-  username: askusers
   password: <%= ENV["ASKUSERS_DATABASE_PASSWORD"] %>

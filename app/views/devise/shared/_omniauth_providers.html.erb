@@ -7,17 +7,17 @@
       url: omniauth_authorize_path(resource_name, provider),
       method: :post,
       data: { turbo: "false" } do |form| %>
-        <% if provider.name == "github" %>
-          <%= button_to "Log in with #{OmniAuth::Utils.camelize(provider)}", 
-                              omniauth_authorize_path(resource_name, provider),
-                              method: :post,
-                              class: "social-signin github"%>
-        <% elsif provider.name == "google_oauth2"%>
-          <%= button_to "Log in with #{OmniAuth::Utils.camelize(provider)[0,6]}+", 
-                              omniauth_authorize_path(resource_name, provider),
-                              method: :post,
-                              class: "social-signin google"%>
-        <% end %>
+      <% if provider.name == "github" %>
+        <%= button_to "Log in with #{OmniAuth::Utils.camelize(provider)}", 
+                            omniauth_authorize_path(resource_name, provider),
+                            method: :post,
+                            class: "social-signin github"%>
+      <% elsif provider.name == "google_oauth2"%>
+        <%= button_to "Log in with #{OmniAuth::Utils.camelize(provider)[0,6]}+", 
+                            omniauth_authorize_path(resource_name, provider),
+                            method: :post,
+                            class: "social-signin google"%>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>

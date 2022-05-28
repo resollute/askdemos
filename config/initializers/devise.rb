@@ -274,17 +274,18 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   if Rails.env.production?
     config.omniauth :github,
-      Rails.application.credentials.dig(Rails.env.to_sym, :github, :client),
-      Rails.application.credentials.dig(Rails.env.to_sym, :github, :secret),
-      # Rails.application.credentials.dig(:omniauth, :github, :client),
-      # Rails.application.credentials.dig(:omniauth, :github, :secret),
-      scope: 'repo,user'
+      # Rails.application.credentials.dig(Rails.env.to_sym, :github, :client),
+      # Rails.application.credentials.dig(Rails.env.to_sym, :github, :secret),
+      Rails.application.credentials.dig(:omniauth, :github, :client),
+      Rails.application.credentials.dig(:omniauth, :github, :secret),
+      # scope: 'repo,user'
+      scope: 'user.public_repo'
 
     config.omniauth :google_oauth2,
-      Rails.application.credentials.dig(Rails.env.to_sym, :google, :client_id),
-      Rails.application.credentials.dig(Rails.env.to_sym, :google, :client_secret)
-      # Rails.application.credentials.dig(:omniauth, :google, :client_id),
-      # Rails.application.credentials.dig(:omniauth, :google, :client_secret)
+      # Rails.application.credentials.dig(Rails.env.to_sym, :google, :client_id),
+      # Rails.application.credentials.dig(Rails.env.to_sym, :google, :client_secret)
+      Rails.application.credentials.dig(:omniauth, :google, :client_id),
+      Rails.application.credentials.dig(:omniauth, :google, :client_secret)
       # scope: 'userinfo.email,userinfo.profile'
   end
   # ==> Warden configuration

@@ -275,7 +275,7 @@ Devise.setup do |config|
   if Rails.env.production?
     config.omniauth :github,
       Rails.application.credentials.dig(Rails.env.to_sym, :github, :client),
-      Rails.application.credentials.dig(Rails.env.to_sym, :github, :secret)
+      Rails.application.credentials.dig(Rails.env.to_sym, :github, :secret),
       # Rails.application.credentials.dig(:omniauth, :github, :client),
       # Rails.application.credentials.dig(:omniauth, :github, :secret),
       scope: 'repo,user'

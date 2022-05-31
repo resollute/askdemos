@@ -424,6 +424,10 @@ p.message__creator-text span {
   margin-bottom: 30px;
 }
 
+#message_list {
+  text-align: justify;
+}
+
 .like-content {
   padding-bottom: 40px;
   width: 100%;

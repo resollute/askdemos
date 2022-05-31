@@ -498,9 +498,12 @@ div.footer__links {
   padding-left: 30px;
 }
 
-@media (max-width: 646.98px) 
+@media (max-width: 684.98px) 
 {
   .container {
     width: 590px;
+  }
+  .header__inner {
+    font-size: 16px;
   }
 }

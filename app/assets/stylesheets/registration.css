@@ -88,7 +88,7 @@ div.field_remember_me input[type=checkbox] {
   right: 0;
   box-sizing: border-box;
   padding: 32px;
-  margin-right: 40px;
+  /* margin-right: 40px; */
   width: 300px;
   height: 400px;
   background: url('https://goo.gl/YbktSj');
@@ -141,4 +141,27 @@ button.social-signin.github {
 
 button.social-signin.google {
   background: #DD4B39;
+}
+
+
+@media (max-width: 727.98px) {
+  .left {
+    margin-left: 0px;
+  }
+
+  .right {
+    margin-right: 0px;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    width: 230px;
+  }
+
+  button.social-signin {
+    margin-left: 50px;
+    width: 175px;
+    font-size: 14px;
+    
+  }
 }

@@ -5,10 +5,12 @@ default: &default
 
 development:
   <<: *default
+  host: localhost
   database: askusers_db
 
 test:
   <<: *default
+  host: localhost
   database: askusers_test_db
 
 production:

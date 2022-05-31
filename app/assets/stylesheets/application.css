@@ -113,8 +113,8 @@ input[type="submit"]:active {
 }
 
 .container {
-  max-width: 800px;
-  padding: 0 10px;
+  max-width: 830px;
+  padding: 0 15px;
   margin: 0 auto;
 }
 
@@ -498,3 +498,9 @@ div.footer__links {
   padding-left: 30px;
 }
 
+@media (max-width: 646.98px) 
+{
+  .container {
+    width: 590px;
+  }
+}
